@@ -1,0 +1,199 @@
+:root {
+  --max-width: 1200px;
+  --gap: 1rem;
+  --brand: #0b7;
+  --text: #222;
+  --muted: #666;
+  font-size: 16px;
+}
+
+/* Reset básico e box-sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+/* Estrutura e Grid */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem; /* Padding base para mobile */
+}
+
+/* Header/Menu - Correção de Layout com Flexbox */
+.site-header {
+  background: #f8f8f8;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.site-header .container {
+  display: flex;               /* Alinha logo e nav horizontalmente */
+  justify-content: space-between; /* Espaço entre logo e nav */
+  align-items: center;         /* Centraliza verticalmente */
+  padding: .6rem 1rem;
+}
+
+/* Logo */
+.logo-link img {
+  height: 44px; /* Garante que a logo tenha um tamanho definido */
+  width: auto;
+  max-width: 100%;
+  display: block;
+}
+
+/* Navegação */
+.main-nav ul,
+.main-nav li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.main-nav ul {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+.main-nav a {
+  color: var(--text);
+  text-decoration: none;
+  padding: .25rem .5rem;
+  display: inline-block;
+}
+.main-nav a[aria-current="page"] {
+  font-weight: 700;
+  border-bottom: 2px solid var(--brand);
+}
+
+/* Hero e Imagens */
+.hero {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.cta {
+  display: inline-block;
+  padding: .6rem 1rem;
+  background: var(--brand);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.hero-image-wrapper {
+  display: block; /* Garante que a imagem ocupe o espaço */
+  margin-top: 2rem;
+}
+
+.hero-image-wrapper img,
+.projeto-img {
+  width: 100%;
+  max-width: 800px; /* Limita o tamanho máximo no desktop */
+  height: auto;
+  border-radius: 12px;
+  display: block; /* Remove o espaço extra abaixo da imagem */
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* Cards (Destaques) */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 0;
+}
+.card {
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+.project-list {
+  padding: 0;
+}
+.project {
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.site-footer {
+  background: #fafafa;
+  padding: 2rem 0;
+  border-top: 1px solid #eee;
+  margin-top: 2rem;
+}
+
+.site-footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* Form styles */
+form label {
+  display: block;
+  margin-top: .75rem;
+  font-weight: 600;
+}
+form input,
+form select,
+form textarea,
+form button {
+  width: 100%;
+  padding: .6rem;
+  margin-top: .25rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fff;
+  color: var(--text);
+}
+button {
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  padding: .8rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+button:focus {
+  outline: 3px solid rgba(11, 119, 102, .2);
+}
+/* melhorar foco só quando visível (teclado) */
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Desktop (Responsividade) */
+@media (min-width: 720px) {
+  /* Container e Padding maior */
+  .container {
+    padding: 2rem;
+  }
+
+  /* Cards em 3 colunas */
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Alinhamento de menu no desktop */
+  .main-nav ul {
+    gap: 2rem;
+  }
+
+  /* Footer lado a lado */
+  .site-footer .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
