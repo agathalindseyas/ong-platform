@@ -1,0 +1,141 @@
+/* ===========================
+   HEADER + NAVEGAÇÃO (único "Projetos" com dropdown)
+   =========================== */
+
+/* Cabeçalho com cor neutra e linha inferior */
+.site-header{
+  background: var(--neutral-100, #f5f5f5);
+  border-bottom: 1px solid var(--neutral-300, #d1d5db);
+}
+.header-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  gap: var(--space-16, 1rem);
+  padding: .75rem 0;
+}
+.logo img{ height:44px; width:auto; }
+@media (min-width:768px){ .logo img{ height:48px; } }
+
+/* ---------- Navegação topo ---------- */
+.nav{ position:relative; }
+.nav-list{
+  display:flex; align-items:center; gap: 1.25rem;
+  list-style: none;           /* remove bullets */
+  margin:0; padding:0;        /* remove recuos */
+}
+
+/* Links do topo: mesma cara para todos */
+.nav-link{
+  position:relative;
+  display:inline-flex; align-items:center; gap:.375rem;
+  padding:.375rem .25rem;
+  text-decoration:none;
+  color: var(--neutral-800, #1f2937);
+  font-weight: 600;
+}
+
+/* Estado ativo: barra inferior na cor primária */
+.nav-link.is-active::after{
+  content:"";
+  position:absolute; left:0; right:0; bottom:-.45rem;
+  height:3px; border-radius:2px;
+  background: var(--primary-500, #10b981);
+}
+
+/* Hover/focus */
+.nav-link:hover,
+.nav-link:focus-visible{
+  color: var(--neutral-900, #111827);
+  outline: none;
+}
+
+/* Botão que abre o dropdown (estilo de link, sem borda nativa) */
+.nav-link--button{
+  background: none;
+  border: 0;
+  padding: .375rem .25rem;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.nav-caret{ font-size:.8em; line-height:1; }
+
+/* ---------- Dropdown ---------- */
+.nav-item--dropdown{ position:relative; }
+
+/* Caixa do submenu */
+.dropdown{
+  position:absolute; top: calc(100% + .5rem); left: 0;
+  min-width: 220px;
+  background: #fff;
+  border: 1px solid var(--neutral-300, #d1d5db);
+  border-radius: var(--radius-12, .75rem);
+  box-shadow: var(--shadow-md, 0 6px 20px rgba(0,0,0,.10));
+  padding: .5rem 0;
+  list-style: none;
+  margin: 0;
+  display: none;        /* escondido por padrão */
+  z-index: 20;
+}
+
+/* Abrir no hover e também via teclado (focus-within) */
+.nav-item--dropdown:hover .dropdown,
+.nav-item--dropdown:focus-within .dropdown{
+  display:block;
+}
+
+.dropdown-link{
+  display:block;
+  padding:.6rem 1rem;
+  color: var(--neutral-800, #1f2937);
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: .5rem; /* leve arredondado no hover */
+}
+.dropdown-link:hover,
+.dropdown-link:focus-visible{
+  background: var(--neutral-100, #f5f5f5);
+  outline: none;
+}
+
+/* ---------- Mobile: botão hambúrguer ---------- */
+.nav-toggle{
+  display: none;
+  background: none;
+  border: 0;
+  padding: .5rem;
+  cursor: pointer;
+}
+.nav-toggle span{
+  display:block; width:24px; height:2px; background:#111; margin:5px 0;
+}
+
+/* Menu mobile em coluna (abre/fecha com classe .is-open) */
+@media (max-width: 900px){
+  .nav-toggle{ display:inline-block; }
+  .nav-list{
+    position: absolute; right: 0; top: 100%;
+    background:#fff;
+    border:1px solid var(--neutral-300, #d1d5db);
+    border-radius: var(--radius-12, .75rem);
+    box-shadow: var(--shadow-md, 0 6px 20px rgba(0,0,0,.10));
+    padding: .5rem;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: .25rem;
+    min-width: 240px;
+  }
+  .nav.is-open .nav-list{ display:flex; }
+
+  .nav-item--dropdown{ width:100%; }
+  .dropdown{
+    position: static;     /* vira lista embutida */
+    border: 0;
+    box-shadow: none;
+    min-width: auto;
+    padding: .25rem 0;
+  }
+  .dropdown-link{ padding: .5rem .75rem; }
+}
+
+

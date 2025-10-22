@@ -1,97 +1,150 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <title>Instituto Exemplo — Transformando Vidas</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Instituto Exemplo: projetos sociais, voluntariado e transparência. Conheça nossa missão e como apoiar.">
-  <meta property="og:title" content="Instituto Exemplo — Transformando Vidas">
-  <meta property="og:description" content="Projetos sociais, voluntariado e prestação de contas.">
-    <link rel="stylesheet" href="css/style.css" />
+  <meta charset="utf-8">
+  <title>Instituto Exemplo — Transformando Vidas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Instituto Exemplo: projetos sociais, voluntariado e transparência. Conheça nossa missão e como apoiar.">
+  <meta property="og:title" content="Instituto Exemplo — Transformando Vidas">
+  <meta property="og:description" content="Projetos sociais, voluntariado e prestação de contas.">
+
+  <!-- CSS modular (ordem importa) -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a href="index.html" class="logo-link" aria-label="Instituto Exemplo - Página inicial">
-                <img src="assets/images/logo.jpg" alt="Logotipo Instituto Exemplo" width="160">
-      </a>
 
-      <nav class="main-nav" aria-label="Menu principal">
-        <ul>
-          <li><a href="index.html" aria-current="page">Início</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
-          <li><a href="cadastro.html">Cadastro</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <!-- ===== HEADER (um único “Projetos” com dropdown) ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Início">
+        <img src="assets/images/logo.jpg" alt="Sementinha do Saber">
+      </a>
 
-  <main id="main-content" class="site-main">
-    <section class="hero container" aria-labelledby="hero-title">
-      <h1 id="hero-title">Junte-se a nós na transformação</h1>
-      <p>Somos uma organização dedicada a promover inclusão social, educação e desenvolvimento comunitário.</p>
-      <p><a class="cta" href="projetos.html">Conheça nossos projetos</a></p>
+      <div class="nav">
+        <button class="nav-toggle" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
 
-      <picture class="hero-image-wrapper">
-                <source type="image/webp" srcset="assets/images/hero.webp">
-                <img src="assets/images/hero.jpg" alt="Voluntários da ONG em ação com crianças" loading="lazy">
-      </picture>
-    </section>
+        <nav aria-label="Principal">
+          <ul class="nav-list">
+            <li><a class="nav-link is-active" href="index.html">Início</a></li>
 
-    <section class="sobre container" aria-labelledby="sobre-title">
-      <h2 id="sobre-title">Missão, Visão e Valores</h2>
-      <p><strong>Missão:</strong> promover oportunidades educacionais e sociais para comunidades vulneráveis.</p>
-      <p><strong>Visão:</strong> uma sociedade mais justa e igualitária.</p>
-      <p><strong>Valores:</strong> transparência, respeito, colaboração.</p>
-    </section>
+            <li class="nav-item--dropdown">
+              <button class="nav-link nav-link--button" aria-haspopup="true" aria-expanded="false">
+                Projetos <span class="nav-caret">▾</span>
+              </button>
+              <ul class="dropdown" role="menu">
+                <li><a class="dropdown-link" href="projetos.html#voluntariado" role="menuitem">Voluntariado</a></li>
+                <li><a class="dropdown-link" href="projetos.html#como-doar" role="menuitem">Como Doar</a></li>
+              </ul>
+            </li>
 
-    <section class="destaques container" aria-labelledby="destaques-title">
-      <h2 id="destaques-title">Nossos destaques</h2>
-      <ul class="cards">
-        <li class="card">
-          <h3>Educação Infantil</h3>
-          <p>Programa de reforço escolar para crianças de 6 a 12 anos.</p>
-        </li>
-        <li class="card">
-          <h3>Capacitação Profissional</h3>
-          <p>Oficinas gratuitas para jovens.</p>
-        </li>
-        <li class="card">
-          <h3>Voluntariado</h3>
-          <p>Oportunidades para serem agentes de mudança.</p>
-        </li>
-      </ul>
-    </section>
+            <li><a class="nav-link" href="cadastro.html">Cadastro</a></li>
+            <li><a class="nav-link" href="index.html#contato">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-    <aside class="transparencia container" aria-labelledby="transp-title">
-      <h2 id="transp-title">Transparência</h2>
-      <p>Baixe nossos relatórios anuais e acompanhe a aplicação dos recursos.</p>
-            <p><a href="assets/images/Docs/relatorio_transparencia.pdf" download>Relatório 2024 (PDF)</a></p>
-    </aside>
-  </main>
+  <!-- ===== MAIN ===== -->
+  <main id="main-content" class="site-main">
 
-  <footer id="contato" class="site-footer">
-    <div class="container">
-      <address>
-        <strong>Instituto Exemplo</strong><br>
-        Rua Exemplo, 123 — Cidade — Estado<br>
-        <a href="tel:+5511999999999">+55 (11) 99999-9999</a><br>
-        <a href="mailto:contato@institutoexemplo.org">contato@institutoexemplo.org</a>
-      </address>
+    <!-- Hero simples -->
+    <section class="section">
+      <div class="container">
+        <h1 class="h1">Junte-se a nós na transformação</h1>
+        <p>Somos uma organização dedicada a promover inclusão social, educação e desenvolvimento comunitário.</p>
+        <p class="mt-16">
+          <a class="btn btn--primary" href="projetos.html">Conheça nossos projetos</a>
+        </p>
 
-      <nav aria-label="Redes sociais">
-        <ul class="social">
-          <li><a href="#" aria-label="Facebook">Facebook</a></li>
-          <li><a href="#" aria-label="Instagram">Instagram</a></li>
-        </ul>
-      </nav>
+        <!-- Usando a imagem que você já tem no projeto -->
+        <div class="mt-24">
+          <img src="assets/images/projeto1.jpg" alt="Voluntários da ONG em ação" />
+        </div>
+      </div>
+    </section>
 
-      <p>&copy; <span id="year">2025</span> Instituto Exemplo — Todos os direitos reservados.</p>
-    </div>
-  </footer>
+    <!-- Missão/Visão/Valores -->
+    <section class="section section--alt" aria-labelledby="sobre-title">
+      <div class="container">
+        <h2 id="sobre-title" class="h2">Missão, Visão e Valores</h2>
+        <p><strong>Missão:</strong> promover oportunidades educacionais e sociais para comunidades vulneráveis.</p>
+        <p><strong>Visão:</strong> uma sociedade mais justa e igualitária.</p>
+        <p><strong>Valores:</strong> transparência, respeito, colaboração.</p>
+      </div>
+    </section>
 
-  <script src="js/main.js" defer></script>
+    <!-- Destaques (cards simples) -->
+    <section class="section" aria-labelledby="destaques-title">
+      <div class="container">
+        <h2 id="destaques-title" class="h2">Nossos destaques</h2>
+
+        <div class="cards mt-24">
+          <article class="card">
+            <div class="card__body">
+              <h3 class="card__title">Educação Infantil</h3>
+              <p>Programa de reforço escolar para crianças de 6 a 12 anos.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__body">
+              <h3 class="card__title">Capacitação Profissional</h3>
+              <p>Oficinas gratuitas para jovens.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__body">
+              <h3 class="card__title">Voluntariado</h3>
+              <p>Oportunidades para serem agentes de mudança.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transparência -->
+    <section class="section section--alt" aria-labelledby="transp-title">
+      <div class="container">
+        <h2 id="transp-title" class="h2">Transparência</h2>
+        <p>Baixe nossos relatórios anuais e acompanhe a aplicação dos recursos.</p>
+        <p class="mt-16">
+          <a class="btn btn--ghost" href="assets/images/Docs/relatorio_transparencia.pdf" download>
+            Relatório 2024 (PDF)
+          </a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="contato" class="site-footer">
+    <div class="container">
+      <address>
+        <strong>Instituto Exemplo</strong><br>
+        Rua Exemplo, 123 — Cidade — Estado<br>
+        <a href="tel:+5511999999999">+55 (11) 99999-9999</a><br>
+        <a href="mailto:contato@institutoexemplo.org">contato@institutoexemplo.org</a>
+      </address>
+
+      <p class="mt-16">&copy; <span id="year">2025</span> Instituto Exemplo — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JS (apenas 1 include) -->
+  <script type="module" src="js/ui.js"></script>
+  <script>
+    // Atualiza o ano no footer automaticamente
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
