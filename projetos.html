@@ -33,7 +33,6 @@
             <li><a class="nav-link" href="index.html">Início</a></li>
 
             <li class="nav-item--dropdown">
-              <!-- ativo nesta página -->
               <button class="nav-link nav-link--button is-active" aria-haspopup="true" aria-expanded="false">
                 Projetos <span class="nav-caret">▾</span>
               </button>
@@ -44,80 +43,15 @@
             </li>
 
             <li><a class="nav-link" href="cadastro.html">Cadastro</a></li>
-            <li><a class="nav-link" href="contato.html">Contato</a></li>
+            <li><a class="nav-link" href="index.html#contato">Contato</a></li>
           </ul>
         </nav>
       </div>
     </div>
   </header>
 
-  <!-- ===== MAIN ===== -->
-  <main id="main-content" class="container section">
-    <h1 class="h1">Projetos Sociais e Oportunidades</h1>
-
-    <!-- Voluntariado -->
-    <section id="voluntariado" class="section" aria-labelledby="voluntariado-title">
-      <h2 id="voluntariado-title" class="h2">Voluntariado: Oportunidades</h2>
-      <p>Confira as oportunidades de voluntariado e inscreva-se para participar. Sua ajuda faz a diferença!</p>
-
-      <ul class="cards project-list mt-24">
-        <li class="card project">
-          <div class="card__body">
-            <h3 class="card__title">Reforço Escolar — Bairro Alfa
-              <span class="badge badge--success">Ativo</span>
-            </h3>
-            <p>Descrição breve do projeto, metas e impacto. Aulas de reforço para crianças.</p>
-            <p><strong>Vagas:</strong> 10 voluntários disponíveis</p>
-            <p class="mt-16">
-              <a class="btn btn--primary" href="cadastro.html?interesse=voluntariado&id=reforco-alfa">Inscrever-se</a>
-            </p>
-          </div>
-        </li>
-
-        <li class="card project">
-          <div class="card__body">
-            <h3 class="card__title">Oficinas de Tecnologia
-              <span class="badge badge--warning">Vagas</span>
-            </h3>
-            <p>Capacitação para jovens em programação e eletrônica, preparando-os para o mercado de trabalho.</p>
-            <p><strong>Vagas:</strong> 5 instrutores voluntários</p>
-            <p class="mt-16">
-              <a class="btn btn--ghost" href="cadastro.html?interesse=voluntariado&id=tecnologia">Inscrever-se</a>
-            </p>
-          </div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- Como Doar -->
-    <section id="como-doar" class="section section--alt" aria-labelledby="doacoes-title">
-      <h2 id="doacoes-title" class="h2">Como Doar e Apoiar Nossos Projetos</h2>
-      <p>Você pode contribuir com doações pontuais ou mensais. Trabalhamos com transparência total.</p>
-
-      <div class="grid mt-24">
-        <div class="col-12 col-md-6">
-          <img src="assets/images/projeto1.jpg" alt="Voluntários da ONG em ação" />
-        </div>
-        <div class="col-12 col-md-6">
-          <div class="card">
-            <div class="card__body">
-              <h3 class="card__title">Campanha: Kits escolares</h3>
-              <p>Meta: R$ 10.000 — Progresso: 65%</p>
-              <progress value="65" max="100" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</progress>
-              <p class="mt-16">
-                <a href="cadastro.html?interesse=doar" class="btn btn--primary cta-doar-principal">Quero Doar</a>
-              </p>
-            </div>
-          </div>
-
-          <div class="mt-16">
-            <p class="mb-16"><strong>Pix:</strong> doacoes@institutoexemplo.org</p>
-            <p class="mb-16"><strong>Materiais:</strong> alimentos, material escolar e itens de higiene.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+  <!-- ===== MAIN montado via SPA ===== -->
+  <main id="app" class="site-main"></main>
 
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
@@ -126,8 +60,9 @@
     </div>
   </footer>
 
-  <!-- JS (apenas 1 include) -->
+  <!-- JS -->
   <script type="module" src="js/ui.js"></script>
+  <script type="module" src="js/app.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>

@@ -52,81 +52,10 @@
     </div>
   </header>
 
-  <!-- ===== MAIN ===== -->
-  <main id="main-content" class="site-main">
+  <!-- ===== MAIN montado via SPA ===== -->
+  <main id="app" class="site-main"></main>
 
-    <!-- Hero simples -->
-    <section class="section">
-      <div class="container">
-        <h1 class="h1">Junte-se a nós na transformação</h1>
-        <p>Somos uma organização dedicada a promover inclusão social, educação e desenvolvimento comunitário.</p>
-        <p class="mt-16">
-          <a class="btn btn--primary" href="projetos.html">Conheça nossos projetos</a>
-        </p>
-
-        <!-- Usando a imagem que você já tem no projeto -->
-        <div class="mt-24">
-          <img src="assets/images/projeto1.jpg" alt="Voluntários da ONG em ação" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Missão/Visão/Valores -->
-    <section class="section section--alt" aria-labelledby="sobre-title">
-      <div class="container">
-        <h2 id="sobre-title" class="h2">Missão, Visão e Valores</h2>
-        <p><strong>Missão:</strong> promover oportunidades educacionais e sociais para comunidades vulneráveis.</p>
-        <p><strong>Visão:</strong> uma sociedade mais justa e igualitária.</p>
-        <p><strong>Valores:</strong> transparência, respeito, colaboração.</p>
-      </div>
-    </section>
-
-    <!-- Destaques (cards simples) -->
-    <section class="section" aria-labelledby="destaques-title">
-      <div class="container">
-        <h2 id="destaques-title" class="h2">Nossos destaques</h2>
-
-        <div class="cards mt-24">
-          <article class="card">
-            <div class="card__body">
-              <h3 class="card__title">Educação Infantil</h3>
-              <p>Programa de reforço escolar para crianças de 6 a 12 anos.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card__body">
-              <h3 class="card__title">Capacitação Profissional</h3>
-              <p>Oficinas gratuitas para jovens.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card__body">
-              <h3 class="card__title">Voluntariado</h3>
-              <p>Oportunidades para serem agentes de mudança.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Transparência -->
-    <section class="section section--alt" aria-labelledby="transp-title">
-      <div class="container">
-        <h2 id="transp-title" class="h2">Transparência</h2>
-        <p>Baixe nossos relatórios anuais e acompanhe a aplicação dos recursos.</p>
-        <p class="mt-16">
-          <a class="btn btn--ghost" href="assets/images/Docs/relatorio_transparencia.pdf" download>
-            Relatório 2024 (PDF)
-          </a>
-        </p>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ===== FOOTER ===== -->
+  <!-- ===== FOOTER (âncora #contato) ===== -->
   <footer id="contato" class="site-footer">
     <div class="container">
       <address>
@@ -140,10 +69,10 @@
     </div>
   </footer>
 
-  <!-- JS (apenas 1 include) -->
+  <!-- JS -->
   <script type="module" src="js/ui.js"></script>
+  <script type="module" src="js/app.js"></script>
   <script>
-    // Atualiza o ano no footer automaticamente
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
