@@ -52,3 +52,13 @@
   --container-max:100%;
   --font-scale:1rem;
 }
+/* Tema escuro */
+:root[data-theme="dark"]{
+  --neutral-50:#121212; --neutral-100:#1a1a1a; --neutral-200:#222; --neutral-300:#333;
+  --neutral-600:#ddd; --neutral-700:#e6e6e6; --neutral-800:#f2f2f2; --neutral-900:#fff;
+  --primary-600:#48b5a9; --primary-700:#3aa397; --accent-400:#4dd4c6;
+}
+:root[data-theme="high-contrast"]{
+  --neutral-50:#000; --neutral-100:#000; --neutral-900:#fff;
+  --primary-600:#ffff00; --primary-700:#ffff00; --accent-400:#00ffff;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "ong-platform",
+  "version": "1.0.0",
+  "description": "Projeto curso de ADS - disciplina de Desenvolvimento front-end para web _Atualização: teste de acessibilidade final._",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "html-minifier-terser": "^7.2.0",
+    "terser": "^5.44.0"
+  }
+}
