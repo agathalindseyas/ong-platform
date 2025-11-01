@@ -1,4 +1,12 @@
 /* Reset básico */
+html { scroll-behavior: smooth; }
+.skip-link{
+  position:absolute;left:0;top:-40px;z-index:1000;
+  background: var(--primary-600);color:#fff;padding:8px 12px;border-radius:6px;
+  transition: top .2s ease;
+}
+.skip-link:focus{ top:0; outline:3px solid var(--accent-400); }
+
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
 body{
@@ -16,3 +24,15 @@ p{ margin:0 0 var(--space-16); }
 .section{ padding:var(--space-32) 0; }
 .section--alt{ background:var(--neutral-50); }
 .visually-hidden{ position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+/* foco sempre visível */
+:where(a, button, input, select, textarea, [tabindex]):focus{
+  outline:3px solid var(--accent-400);
+  outline-offset:2px;
+  border-radius:.25rem;
+}
+
+/* garante contraste mínimo em textos sobre fundo claro/escuro */
+body{ color: var(--neutral-900); background: var(--neutral-50); }
+.site-header{ background: var(--neutral-50); }
+.nav-link, .dropdown-link{ color: var(--neutral-900); }
+.nav-link:hover, .dropdown-link:hover{ color: var(--primary-700); }
